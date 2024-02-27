@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Dom Events</title>
+</head>
+
+<body>
+    <h1>Dom er Ajke speacial events</h1>
+    <button onclick="console.log(7)">Click me</button>
+    <button id="make-red">Click me for Red</button>
+    <button id="make-yellow">Click me for yellow</button>
+    <button id="make-pink">Click me for pink</button>
+    <button id="make-green">Click me for green</button>
+    <button id="make-goldenrod">Click me for Golden Rod</button>
+
+    <script src="js/events.js"></script>
+
+    <script>
+
+        const makeButoonRed = document.getElementById('make-red');
+        const makeButtonYellow = document.getElementById('make-yellow');
+
+        makeButoonRed.onclick = makeRed;
+        makeButtonYellow.onclick = makeYellow;
+
+        function makeRed() {
+            document.body.style.backgroundColor = 'red';
+        }
+
+        function makeYellow() {
+            document.body.style.backgroundColor = 'yellow';
+        }
+
+
+        const makeButoonPink = document.getElementById('make-pink');
+        makeButoonPink.addEventListener('click', makePink);
+
+        function makePink() {
+            document.body.style.backgroundColor = 'pink';
+        }
+
+        const makeButtonGreen = document.getElementById('make-green');
+        makeButtonGreen.addEventListener('click', function makeGreen() {
+            document.body.style.backgroundColor = 'green';
+        })
+
+        document.getElementById('make-goldenrod').addEventListener('click', function(){
+            document.body.style.backgroundColor = 'goldenrod'
+        }) 
+
+    </script>
+</body>
+
+</html>

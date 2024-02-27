@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Comment</title>
+</head>
+
+<body>
+    <h1>Please add your comment</h1>
+    <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda a, architecto beatae ratione debitis,
+            corrupti ducimus pariatur, nihil quidem aspernatur velit ipsam. Deserunt cupiditate, porro sapiente possimus
+            totam beatae aspernatur hic! Mollitia, corrupti voluptatibus quisquam blanditiis a accusamus voluptatum
+            incidunt similique ipsam consequatur rem quasi dolorem repellat doloremque officia perferendis!</p>
+        <p>Rerum ipsam eos quas nobis cumque eius delectus inventore incidunt nostrum modi nemo dolor cupiditate velit
+            sint mollitia quia ab vel odit amet laudantium, tempora obcaecati! Necessitatibus mollitia ipsum eius
+            explicabo fugit ratione harum voluptatibus adipisci libero officia cum molestias ipsa delectus pariatur,
+            nostrum hic reprehenderit voluptatem placeat similique nesciunt.</p>
+        <p>Nemo neque numquam, deleniti commodi, magnam autem voluptatem nostrum eveniet blanditiis ex corrupti at
+            corporis iure vitae error veritatis facere aliquam fugiat fugit velit. Maxime consequuntur sed deserunt
+            distinctio voluptate? Corporis, delectus! Asperiores veniam, ex accusantium, praesentium nobis voluptatum
+            architecto error at eaque quas aliquid placeat distinctio deleniti fugit earum!</p>
+    </div>
+    <div>
+        <textarea name="" id="new-comment" cols="60" rows="5"></textarea>
+        <br>
+        <button id="btn-post">Post</button>
+    </div>
+    <script>
+        // 1st e button ta dhorsi tarpr tar moddhe ekta event add korsi
+        document.getElementById('btn-post').addEventListener('click', function () {
+            // 2nd text field ta dhorsi ar tar vitorer value ta nisi
+            const commentBox = document.getElementById('new-comment');
+            const newComment = commentBox.value;
+
+            // ei bar text area ar value ta jei div rakhbo oita dhorlam
+            const commentContainer = document.getElementById('comment-container');
+            // oi div er moddhe jei p tag er moddhe comment ta rakhbo oita banalam ar comment(value) ta p tag e rakhlam
+            const p = document.createElement('p');
+            p.innerText = newComment;
+            // tar por p tag ta ke append kore dilam div er child hisebe
+            commentContainer.appendChild(p);
+            // tarpr text area take emty kore dilam
+            commentBox.value = "";
+
+        })
+
+
+    </script>
+</body>
+
+</html>
